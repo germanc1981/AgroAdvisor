@@ -1,4 +1,4 @@
-# AgroAdvisor GPT - App con Streamlit
+# AgroAdvisor GPT - App con Streamlit (versión final para Streamlit Cloud)
 
 import streamlit as st
 from openai import OpenAI
@@ -6,9 +6,8 @@ from openai import OpenAI
 # CONFIGURACION
 st.set_page_config(page_title="AgroAdvisor GPT", layout="centered")
 
-# API Key (puede reemplazarse por variable de entorno)
-import os
-api_key = os.getenv("OPENAI_API_KEY")
+# Obtener la API Key desde los secrets de Streamlit Cloud
+api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=api_key)
 
 st.title("🌱 AgroAdvisor GPT")
